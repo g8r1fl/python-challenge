@@ -17,17 +17,21 @@ with open(csvpath) as csvfile:
 
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
-    print(csv_header)
+    # print(csv_header)
     
     # calculate total number of months in data
-    # Total_months = len(list(csvreader))
-    # print(f"Total months = {Total_months}")
-    # print(Total_months)
+    Total_months = []
+    profit_loss = []
+    chg_pl = []
 
     # # Read each row of data after the header
-    total = 0  
+
     for row in csvreader:
-        total += int(row[1])
-    print(total)    
+
+        Total_months.append(row[0])
+        profit_loss.append(int(row[1]))    
+    
+    print(len(Total_months))
+    print(sum(profit_loss))
    
     
