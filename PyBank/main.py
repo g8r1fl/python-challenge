@@ -19,13 +19,15 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     print(csv_header)
     
+    # calculate total number of months in data
+    # Total_months = len(list(csvreader))
+    # print(f"Total months = {Total_months}")
+    # print(Total_months)
 
     # # Read each row of data after the header
-    # for row in csvreader:
-    #     print(row)
-    #     print(len(csvreader))
+    total = 0  
+    for row in csvreader:
+        total += int(row[1])
+    print(total)    
    
-    # calculate total number of months in data
-    Total_months = len(list(csvreader))
-    # print(f"Total months = {Total_months}")
-    print(Total_months)
+    
