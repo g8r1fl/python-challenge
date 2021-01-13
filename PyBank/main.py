@@ -43,10 +43,15 @@ with open(csvpath) as csvfile:
     for i in range(1,len(profit_loss)):
         chg_pl.append(profit_loss[i] - profit_loss[i-1])
         avg_chg = sum(chg_pl) / len(chg_pl)
-    print("avg change: ", avg_chg)    
+        
 
+    print("avg change: ", avg_chg)    
+    
     print("Greatest Increase in profits: ",max(profit_loss))
     print("Greatest Decrease in profits: ",min(profit_loss))
+
+    print(Total_months[profit_loss.index(max(profit_loss))])
+
 
 
    
