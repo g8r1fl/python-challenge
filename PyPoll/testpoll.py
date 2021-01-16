@@ -23,8 +23,15 @@ with open(csvpath) as csvfile:
 def Extract(voter_list):
     return [item[2] for item in voter_list]
 
-print(Extract(voter_list))    
-    # Read the header row first (skip this step if there is no header)
-    # csv_header = next(csvreader)
-    # print(csv_header)
+candidates = (Extract(voter_list))   
+# print(candidates) 
+
+# create empty dictionary
+candidates_dict = {}
+
+# update 'candidates_dict' with keys for each element (i) in 'candidates'
+for i in range(len(candidates)):
+    candidates_dict[candidates[i]] = candidates.count(candidates[i])
+
+print(candidates_dict)    
     
