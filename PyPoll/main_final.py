@@ -5,7 +5,7 @@ import os
 # Module for reading CSV files
 import csv
 # Define location of CSV
-csvpath = os.path.join('Resources', 'test.csv')
+csvpath = os.path.join('Resources', 'election_data.csv')
 
 dict = {}
 # Open csv
