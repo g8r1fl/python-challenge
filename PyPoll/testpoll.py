@@ -18,19 +18,23 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     print(csv_header)
     
-    count = 0
+    total_votes = 0
 # for loop that reads each row, checkin candidate row[indx]. if key exist increment value, 
 # if not create key and give a value
 
     for row in csvreader:
-        if (row[2]) not in dict:
-            dict[row[2]] = 1
-            
-        else:
-            dict[row[2]] = count + 1
-            # count = 0
+        #set default key and value
+        dict.setdefault((row[2]), 0)
+        #increment by 1 every occurence
+        dict[row[2]] += 1
+        total_votes = total_votes + 1
+
+winner = max([i for i in dict.values()])
 
 print(dict)
-print(count)
+print(total_votes)
+print(winner)
+
+
 
 
